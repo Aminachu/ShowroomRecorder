@@ -33,19 +33,23 @@ namespace ShowroomRecorder
 
         public List<string> proc = new List<string>();
 
+        static Thread CheckUpdates = null;
         private static string basepath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
         private static string dbpath = System.IO.Path.Combine(basepath, "data.db");
         internal static ShowroomRecorder.MainWindow mw;
         private dynamic data;
         public byte[] prgfx;
+        private List<string> roomIDS;
 
         public MainWindow()
         {
             InitializeComponent();
             mw = this;
             proclist.ItemsSource = proc;
-            List<string> roomIDS = LoadData();
-            Task<bool> StartForm = updateAsync(roomIDS);
+            roomIDS = LoadData();
+            CheckUpdates = new Thread(updateAsync);
+            CheckUpdates.IsBackground = true;
+            CheckUpdates.Start();
         }
 
         public List<string> LoadData()
@@ -87,7 +91,7 @@ namespace ShowroomRecorder
             return roomIDS;
         }
 
-        private async Task<bool> updateAsync(List<string> roomIDS)
+        private void updateAsync()
         {
             bool didIt = false;
 
@@ -104,7 +108,10 @@ namespace ShowroomRecorder
                     byte[] imageBytes = webClient.DownloadData(url);
                     imagees = imageBytes;
 
-                    rooms.Items.Add(data.room_url_key);
+                    Dispatcher.Invoke(new Action(() =>
+                    {
+                        rooms.Items.Add(data.room_url_key);
+                    }));
                 }
                 using (SQLiteConnection conn = new SQLiteConnection(@"Data Source=" + dbpath + ";"))
                 {
@@ -120,7 +127,7 @@ namespace ShowroomRecorder
                     didIt = true;
                 }
             }
-            return didIt;
+            //return didIt;
         }
 
         public void getNewShowroom(string ID)

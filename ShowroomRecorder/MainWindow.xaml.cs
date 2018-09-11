@@ -87,7 +87,6 @@ namespace ShowroomRecorder
             return roomIDS;
         }
 
-
         private async Task<bool> updateAsync(List<string> roomIDS)
         {
             bool didIt = false;
@@ -124,60 +123,33 @@ namespace ShowroomRecorder
             return didIt;
         }
 
-        public void UpdateData(int id)
+        public void getNewShowroom(string ID)
         {
+            byte[] imagees;
+
             using (WebClient webClient = new WebClient())
             {
-                var json = webClient.DownloadString("https://www.showroom-live.com/api/room/profile?room_id=" + id);
+                var json = webClient.DownloadString("https://www.showroom-live.com/api/room/profile?room_id=" + ID);
 
                 data = JsonConvert.DeserializeObject(json);
+                string url = data.image;
+                byte[] imageBytes = webClient.DownloadData(url);
+                imagees = imageBytes;
 
+                rooms.Items.Add(data.room_url_key);
             }
-
             using (SQLiteConnection conn = new SQLiteConnection(@"Data Source=" + dbpath + ";"))
             {
                 conn.Open();
 
-                SQLiteCommand command = new SQLiteCommand("UPDATE showroom_rooms SET handle = '" + data.room_url_key.ToString() + "' WHERE roomid = '" + data.room_id.ToString() + "'", conn);
+                SQLiteCommand cmd = new SQLiteCommand("INSERT INTO showroom_rooms SET handle = '" + data.room_url_key.ToString() + "', profilegfx = @blob WHERE roomid = '" + data.room_id.ToString() + "'", conn);
+                cmd.Parameters.Add(new SQLiteParameter("@blob", System.Data.DbType.Binary));
+                SQLiteParameter parameter = new SQLiteParameter("@blob", System.Data.DbType.Binary);
+                parameter.Value = imagees;
+                cmd.Parameters.Add(parameter);
 
-                try
-                {
-                    command.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception(ex.Message);
-                }
-                finally
-                {
-                    conn.Close();
-                    command.Dispose();
-                }
-
+                conn.Close();
             }
-        }
-
-        private byte[] blob(Stream input)
-        {
-            var buffer = new byte[16 * 1024];
-            byte[] temp = new byte[0];
-
-            using (MemoryStream ms = new MemoryStream())
-            {
-                int read;
-                while ((read = input.Read(buffer, 0, buffer.Length)) > 0)
-                {
-                    ms.Write(buffer, 0, read);
-                    temp = ms.ToArray();
-                }
-            }
-            return temp;
-
-        }
-
-        public void refreshList()
-        {
-            proclist.Items.Refresh();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -196,9 +168,10 @@ namespace ShowroomRecorder
 
         }
 
+        #region Unbenutzt
+
         private bool roomIsLive(int id)
         {
-
             using (var webClient = new System.Net.WebClient())
             {
                 var json = webClient.DownloadString("https://www.showroom-live.com/room/is_live?room_id=" + id);
@@ -216,27 +189,15 @@ namespace ShowroomRecorder
 
                     return true;
                 }
-
             }
-
         }
 
-        public void OnRecordingStarted(object source, ShowroomArgs e)
+        public void refreshList()
         {
-            proc.Add(e.ID);
             proclist.Items.Refresh();
         }
 
-        public void OnRecordingEnded(object source, ShowroomArgs e)
-        {
-            Application.Current.Dispatcher.BeginInvoke(new Action(() =>
-            {
-                proc.Remove(e.ID);
-                MainWindow.mw.proclist.Items.Refresh();
-            }));
-        }
-
-        private void roomData(int id)
+        private void roomData(int id) // Testfunktion
         {
 
             using (var webClient = new System.Net.WebClient())
@@ -252,18 +213,12 @@ namespace ShowroomRecorder
                 htmlTxt.Text = stuff.room_url_key;
                 if (roomIsLive(id) == false)
                     return;
-                Livestream ls = new Livestream(stuff.room_url_key.ToString(), url.streaming_url_list[1].url.ToString());
-
-                ls.RecordingStarted += OnRecordingStarted;
-                ls.RecordingEnded += OnRecordingEnded;
-
-                ls.Start();
-
-
-
             }
 
         }
+
+        #endregion
+        #region In Progress
 
         private void Window_ContentRendered(object sender, EventArgs e)
         {
@@ -278,7 +233,7 @@ namespace ShowroomRecorder
         void worker_DoWork(object sender, DoWorkEventArgs e)
         {
 
-                //(sender as BackgroundWorker).ReportProgress();
+            //(sender as BackgroundWorker).ReportProgress();
 
 
         }
@@ -287,8 +242,8 @@ namespace ShowroomRecorder
         {
             prog.Value = e.ProgressPercentage;
         }
-
     }
+    #endregion
 
     public class ShowroomArgs : EventArgs
     {

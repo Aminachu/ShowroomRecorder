@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="ShowroomRecorder.ShowroomItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ShowroomRecorder"
+             mc:Ignorable="d" 
+             d:DesignHeight="79" d:DesignWidth="510" Background="White">
+    <Grid>
+        <Rectangle x:Name="uc_bg" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="75" Margin="0,2,-2,0" Stroke="Black" VerticalAlignment="Top" Width="512"/>
+        <Image x:Name="uc_image" HorizontalAlignment="Left" Height="65" Margin="5,7,0,0" VerticalAlignment="Top" Width="116"/>
+        <Label x:Name="uc_alias" Content="Showrrom Alias" HorizontalAlignment="Left" Margin="126,7,0,0" VerticalAlignment="Top" Width="229" Height="33" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="uc_handle" Content="Showrrom handle" HorizontalAlignment="Left" Margin="126,39,0,0" VerticalAlignment="Top" Width="229" Height="33"/>
+        <Label x:Name="uc_livesince" Content="live since:" HorizontalAlignment="Left" Margin="299,50,0,-4" VerticalAlignment="Top" Width="211" Height="33" Visibility="Hidden"/>
+
+    </Grid>
+</UserControl>

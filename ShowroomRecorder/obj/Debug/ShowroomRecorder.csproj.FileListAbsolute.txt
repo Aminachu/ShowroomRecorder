@@ -1,0 +1,56 @@
+C:\Users\chris\documents\visual studio 2017\Projects\ShowroomRecorder\ShowroomRecorder\bin\Debug\ShowroomRecorder.exe.config
+C:\Users\chris\documents\visual studio 2017\Projects\ShowroomRecorder\ShowroomRecorder\bin\Debug\ShowroomRecorder.exe
+C:\Users\chris\documents\visual studio 2017\Projects\ShowroomRecorder\ShowroomRecorder\bin\Debug\ShowroomRecorder.pdb
+C:\Users\chris\documents\visual studio 2017\Projects\ShowroomRecorder\ShowroomRecorder\bin\Debug\EntityFramework.dll
+C:\Users\chris\documents\visual studio 2017\Projects\ShowroomRecorder\ShowroomRecorder\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\chris\documents\visual studio 2017\Projects\ShowroomRecorder\ShowroomRecorder\bin\Debug\Newtonsoft.Json.dll
+C:\Users\chris\documents\visual studio 2017\Projects\ShowroomRecorder\ShowroomRecorder\bin\Debug\System.Data.SQLite.dll
+C:\Users\chris\documents\visual studio 2017\Projects\ShowroomRecorder\ShowroomRecorder\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\chris\documents\visual studio 2017\Projects\ShowroomRecorder\ShowroomRecorder\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\chris\documents\visual studio 2017\Projects\ShowroomRecorder\ShowroomRecorder\bin\Debug\EntityFramework.xml
+C:\Users\chris\documents\visual studio 2017\Projects\ShowroomRecorder\ShowroomRecorder\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\chris\documents\visual studio 2017\Projects\ShowroomRecorder\ShowroomRecorder\bin\Debug\Newtonsoft.Json.xml
+C:\Users\chris\documents\visual studio 2017\Projects\ShowroomRecorder\ShowroomRecorder\bin\Debug\System.Data.SQLite.xml
+C:\Users\chris\documents\visual studio 2017\Projects\ShowroomRecorder\ShowroomRecorder\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\chris\documents\visual studio 2017\Projects\ShowroomRecorder\ShowroomRecorder\obj\Debug\MainWindow.g.cs
+C:\Users\chris\documents\visual studio 2017\Projects\ShowroomRecorder\ShowroomRecorder\obj\Debug\App.g.cs
+C:\Users\chris\documents\visual studio 2017\Projects\ShowroomRecorder\ShowroomRecorder\obj\Debug\ShowroomRecorder_MarkupCompile.cache
+C:\Users\chris\documents\visual studio 2017\Projects\ShowroomRecorder\ShowroomRecorder\obj\Debug\ShowroomRecorder_MarkupCompile.lref
+C:\Users\chris\documents\visual studio 2017\Projects\ShowroomRecorder\ShowroomRecorder\obj\Debug\MainWindow.baml
+C:\Users\chris\documents\visual studio 2017\Projects\ShowroomRecorder\ShowroomRecorder\obj\Debug\ShowroomRecorder.g.resources
+C:\Users\chris\documents\visual studio 2017\Projects\ShowroomRecorder\ShowroomRecorder\obj\Debug\ShowroomRecorder.Properties.Resources.resources
+C:\Users\chris\documents\visual studio 2017\Projects\ShowroomRecorder\ShowroomRecorder\obj\Debug\ShowroomRecorder.csproj.GenerateResource.Cache
+C:\Users\chris\documents\visual studio 2017\Projects\ShowroomRecorder\ShowroomRecorder\obj\Debug\ShowroomRecorder.exe
+C:\Users\chris\documents\visual studio 2017\Projects\ShowroomRecorder\ShowroomRecorder\obj\Debug\ShowroomRecorder.pdb
+C:\Users\chris\documents\visual studio 2017\Projects\ShowroomRecorder\ShowroomRecorder\obj\Debug\ShowroomItem.g.cs
+C:\Users\chris\documents\visual studio 2017\Projects\ShowroomRecorder\ShowroomRecorder\obj\Debug\ShowroomItem.baml
+C:\Users\Felix\source\repos\ShowroomRecorder\ShowroomRecorder\bin\Debug\ShowroomRecorder.exe.config
+C:\Users\Felix\source\repos\ShowroomRecorder\ShowroomRecorder\bin\Debug\ShowroomRecorder.exe
+C:\Users\Felix\source\repos\ShowroomRecorder\ShowroomRecorder\bin\Debug\ShowroomRecorder.pdb
+C:\Users\Felix\source\repos\ShowroomRecorder\ShowroomRecorder\bin\Debug\EntityFramework.dll
+C:\Users\Felix\source\repos\ShowroomRecorder\ShowroomRecorder\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Felix\source\repos\ShowroomRecorder\ShowroomRecorder\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Felix\source\repos\ShowroomRecorder\ShowroomRecorder\bin\Debug\System.Data.SQLite.dll
+C:\Users\Felix\source\repos\ShowroomRecorder\ShowroomRecorder\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Felix\source\repos\ShowroomRecorder\ShowroomRecorder\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Felix\source\repos\ShowroomRecorder\ShowroomRecorder\bin\Debug\EntityFramework.xml
+C:\Users\Felix\source\repos\ShowroomRecorder\ShowroomRecorder\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Felix\source\repos\ShowroomRecorder\ShowroomRecorder\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Felix\source\repos\ShowroomRecorder\ShowroomRecorder\bin\Debug\System.Data.SQLite.xml
+C:\Users\Felix\source\repos\ShowroomRecorder\ShowroomRecorder\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\Felix\source\repos\ShowroomRecorder\ShowroomRecorder\obj\Debug\ShowroomRecorder.csprojAssemblyReference.cache
+C:\Users\Felix\source\repos\ShowroomRecorder\ShowroomRecorder\obj\Debug\MainWindow.g.cs
+C:\Users\Felix\source\repos\ShowroomRecorder\ShowroomRecorder\obj\Debug\ShowroomItem.g.cs
+C:\Users\Felix\source\repos\ShowroomRecorder\ShowroomRecorder\obj\Debug\App.g.cs
+C:\Users\Felix\source\repos\ShowroomRecorder\ShowroomRecorder\obj\Debug\ShowroomRecorder_MarkupCompile.cache
+C:\Users\Felix\source\repos\ShowroomRecorder\ShowroomRecorder\obj\Debug\ShowroomRecorder_MarkupCompile.lref
+C:\Users\Felix\source\repos\ShowroomRecorder\ShowroomRecorder\obj\Debug\MainWindow.baml
+C:\Users\Felix\source\repos\ShowroomRecorder\ShowroomRecorder\obj\Debug\ShowroomItem.baml
+C:\Users\Felix\source\repos\ShowroomRecorder\ShowroomRecorder\obj\Debug\ShowroomRecorder.g.resources
+C:\Users\Felix\source\repos\ShowroomRecorder\ShowroomRecorder\obj\Debug\ShowroomRecorder.Properties.Resources.resources
+C:\Users\Felix\source\repos\ShowroomRecorder\ShowroomRecorder\obj\Debug\ShowroomRecorder.csproj.GenerateResource.cache
+C:\Users\Felix\source\repos\ShowroomRecorder\ShowroomRecorder\obj\Debug\ShowroomRecorder.csproj.CoreCompileInputs.cache
+C:\Users\Felix\source\repos\ShowroomRecorder\ShowroomRecorder\obj\Debug\ShowroomRecorder.csproj.CopyComplete
+C:\Users\Felix\source\repos\ShowroomRecorder\ShowroomRecorder\obj\Debug\ShowroomRecorder.exe
+C:\Users\Felix\source\repos\ShowroomRecorder\ShowroomRecorder\obj\Debug\ShowroomRecorder.pdb
+C:\Users\chris\documents\visual studio 2017\Projects\ShowroomRecorder\ShowroomRecorder\obj\Debug\ShowroomRecorder.csprojResolveAssemblyReference.cache

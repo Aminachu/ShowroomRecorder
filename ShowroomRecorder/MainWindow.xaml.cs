@@ -146,6 +146,10 @@ namespace ShowroomRecorder
 
                 rooms.Items.Add(data.room_url_key);
             }
+
+            if (string.IsNullOrEmpty(Alias))
+                Alias = data.room_url_key;
+
             using (SQLiteConnection conn = new SQLiteConnection(@"Data Source=" + dbpath + ";"))
             {
                 conn.Open();
@@ -158,11 +162,16 @@ namespace ShowroomRecorder
                 cmd.ExecuteNonQuery();
                 conn.Close();
             }
+            if(Directory.Exists(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location) + @"\Recordings"))
+            {
+                Directory.CreateDirectory(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location) + @"\Recordings");
+            }
+            Directory.CreateDirectory(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location) + @"\Recordings\" + data.room_url_key);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            getNewShowroom(roomID.Text, "Test");
+            getNewShowroom(roomID.Text, "");
 
 
             //if (!roomIsLive(Int32.Parse(roomID.Text)))

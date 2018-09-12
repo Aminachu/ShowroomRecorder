@@ -31,6 +31,7 @@ namespace ShowroomRecorder
         private dynamic data;
         private Thread buildInTime;
 
+
         private int roomid;
         private byte[] image;
         private string alias;
@@ -51,8 +52,6 @@ namespace ShowroomRecorder
             timer.Interval = TimeSpan.FromMinutes(1);
             timer.Tick += bgw;
             timer.Start();
-
-            
 
             this.roomid = _roomid;
 

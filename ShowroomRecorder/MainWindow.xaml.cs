@@ -122,6 +122,7 @@ namespace ShowroomRecorder
                     SQLiteParameter parameter = new SQLiteParameter("@blob", System.Data.DbType.Binary);
                     parameter.Value = imagees;
                     cmd.Parameters.Add(parameter);
+                    cmd.ExecuteNonQuery();
 
                     conn.Close();
                     didIt = true;
@@ -130,7 +131,7 @@ namespace ShowroomRecorder
             //return didIt;
         }
 
-        public void getNewShowroom(string ID)
+        public void getNewShowroom(string ID, string Alias)
         {
             byte[] imagees;
 
@@ -149,29 +150,31 @@ namespace ShowroomRecorder
             {
                 conn.Open();
 
-                SQLiteCommand cmd = new SQLiteCommand("INSERT INTO showroom_rooms SET handle = '" + data.room_url_key.ToString() + "', profilegfx = @blob WHERE roomid = '" + data.room_id.ToString() + "'", conn);
+                SQLiteCommand cmd = new SQLiteCommand("INSERT INTO showroom_rooms (handle, profilegfx, roomid, alias) VALUES ('" + data.room_url_key.ToString() + "', @blob, '" + data.room_id.ToString() + "', '" + Alias + "')", conn);
                 cmd.Parameters.Add(new SQLiteParameter("@blob", System.Data.DbType.Binary));
                 SQLiteParameter parameter = new SQLiteParameter("@blob", System.Data.DbType.Binary);
                 parameter.Value = imagees;
                 cmd.Parameters.Add(parameter);
-
+                cmd.ExecuteNonQuery();
                 conn.Close();
             }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            getNewShowroom(roomID.Text, "Test");
 
-            if (!roomIsLive(Int32.Parse(roomID.Text)))
-            {
-                MessageBox.Show("Raum offline");
-            }
-            else
-            {
-                MessageBox.Show("Raum online");
-            }
 
-            roomData(Int32.Parse(roomID.Text));
+            //if (!roomIsLive(Int32.Parse(roomID.Text)))
+            //{
+            //    MessageBox.Show("Raum offline");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Raum online");
+            //}
+
+            //roomData(Int32.Parse(roomID.Text));
 
         }
 

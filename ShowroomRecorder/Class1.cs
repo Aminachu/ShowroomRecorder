@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,13 +13,14 @@ namespace ShowroomRecorder
 
         private string ID;
         private string URL;
+        private string HANDEL;
         private Process proc;
 
-        public Livestream(string id, string url)
+        public Livestream(string id, string url, string handel)
         {
             ID = id;
             URL = url;
-
+            HANDEL = handel;
         }
 
         public event EventHandler<ShowroomArgs> RecordingStarted;
@@ -27,11 +29,15 @@ namespace ShowroomRecorder
 
         public void Start()
         {
+            if (!Directory.Exists(System.IO.Path.GetDirectoryName(HANDEL)))
+            {
+                Directory.CreateDirectory(HANDEL);
+            }
             string now = DateTime.Now.ToString("dd_MM_yyyy-HH_mm");
             proc = new Process();
             proc.StartInfo.FileName = @"Streamlink\streamlink.exe";
             // proc.StartInfo.Arguments = "--twitch-oauth-token 64mcnqf3ja8d03bbd0pfn679u3ihda twitch.tv/bakacrew best";
-            proc.StartInfo.Arguments = "--hls-segment-threads 3 --hls-segment-timeout 10 --hls-playlist-reload-attempts 3 --http-timeout 1.5 -o " + ID + "_" + now + ".mp4 \"hlsvariant://" + URL + "\" best";
+            proc.StartInfo.Arguments = "--hls-segment-threads 3 --hls-segment-timeout 10 --hls-playlist-reload-attempts 3 --http-timeout 1.5 -o " + HANDEL + "\\" + ID + "_" + now + ".mp4 \"hlsvariant://" + URL + "\" best";
             proc.StartInfo.CreateNoWindow = false;
             proc.EnableRaisingEvents = true;
             proc.Exited += new EventHandler(proc_exited);

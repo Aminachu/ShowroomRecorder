@@ -162,7 +162,7 @@ namespace ShowroomRecorder
                 cmd.ExecuteNonQuery();
                 conn.Close();
             }
-            if(Directory.Exists(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location) + @"\Recordings"))
+            if(!Directory.Exists(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location) + @"\Recordings"))
             {
                 Directory.CreateDirectory(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location) + @"\Recordings");
             }

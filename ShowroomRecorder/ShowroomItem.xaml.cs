@@ -49,7 +49,7 @@ namespace ShowroomRecorder
             InitializeComponent();
 
             DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromMinutes(1);
+            timer.Interval = TimeSpan.FromSeconds(20);
             timer.Tick += bgw;
             timer.Start();
 
@@ -187,7 +187,7 @@ namespace ShowroomRecorder
                     }));
                     if (isRecording == false)
                     {
-                        Livestream ls = new Livestream(data.room_url_key.ToString(), url.streaming_url_list[1].url.ToString(), basepath + @"\Recordings\" + data.room_url_key.ToString());
+                        Livestream ls = new Livestream(data.room_url_key.ToString(), url.streaming_url_list[1].url.ToString(), basepath + @"\Recordings\" + data.room_url_key.ToString() + "\\");
                         isRecording = true;
 
                         ls.RecordingStarted += OnRecordingStarted;
